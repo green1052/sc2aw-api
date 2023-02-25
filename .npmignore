@@ -4,6 +4,5 @@ src
 .gitignore
 .pnp.cjs
 .yarnrc.yml
-README.md
 tsconfig.json
 yarn.lock

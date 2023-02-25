@@ -19,7 +19,7 @@
     "bugs": "https://github.com/green1052/sc2aw-api/issues",
     "scripts": {
         "build": "tsc",
-        "prepublish": "yarn run build"
+        "prepublishOnly": "yarn run build"
     },
     "devDependencies": {
         "typescript": "^4.9.5"

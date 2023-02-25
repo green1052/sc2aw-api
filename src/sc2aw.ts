@@ -89,7 +89,7 @@ export class Sc2aw {
         bnetBucketId: number,
         bnetRecordId: number
     ) {
-        // TODO
+        throw new Error("Not implemented");
     }
 
     /**

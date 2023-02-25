@@ -1,0 +1,30 @@
+{
+    "name": "sc2aw-api",
+    "version": "1.0.0",
+    "packageManager": "yarn@3.4.1",
+    "description": "API for sc2arcade.com",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/green1052/sc2aw-api.git"
+    },
+    "keywords": [
+        "sc2arcade",
+        "api"
+    ],
+    "author": "green1052",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/green1052/sc2aw-api",
+    "bugs": "https://github.com/green1052/sc2aw-api/issues",
+    "scripts": {
+        "build": "tsc",
+        "publish": "yarn run build && yarn publish"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "got": "11.8.6"
+    }
+}

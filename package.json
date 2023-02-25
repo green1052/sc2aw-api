@@ -1,6 +1,6 @@
 {
     "name": "sc2aw-api",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "packageManager": "yarn@3.4.1",
     "description": "API for sc2arcade.com",
     "main": "dist/index.js",

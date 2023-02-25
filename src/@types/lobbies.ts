@@ -58,6 +58,7 @@ export interface ActiveLobbies {
     mapVariantIndex: number;
     mapVariantMode: string;
     lobbyTitle: string;
+    hostName: string;
     slotsHumansTotal: number;
     slotsHumansTaken: number;
     slots: Slot[];

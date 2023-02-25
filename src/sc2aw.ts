@@ -49,7 +49,7 @@ export class Sc2aw {
         includeJoinHistory: boolean = true,
         recentlyClosedThreshold: number = 20
     ): Promise<ActiveLobbiesResponse> {
-        return this.client.get("/lobbies/active", {
+        return this.client.get("lobbies/active", {
             searchParams: {
                 regionId,
                 includeMapInfo,
@@ -75,7 +75,7 @@ export class Sc2aw {
         bnetBucketId: number,
         bnetRecordId: number
     ): Promise<LobbiesDetailsResponse> {
-        return this.client.get(`/lobbies/${regionId}/${bnetBucketId}/${bnetRecordId}`).json<LobbiesDetailsResponse>();
+        return this.client.get(`lobbies/${regionId}/${bnetBucketId}/${bnetRecordId}`).json<LobbiesDetailsResponse>();
     }
 
     /**
@@ -121,7 +121,7 @@ export class Sc2aw {
         includeMatchResults: boolean = false,
         includeMatchPlayers: boolean = false
     ): Promise<ActiveLobbiesResponse> {
-        return this.client.get("/lobbies/history", {
+        return this.client.get("lobbies/history", {
             searchParams: {
                 regionId,
                 mapId,
@@ -163,7 +163,7 @@ export class Sc2aw {
         orderDirection: OrderDirection = "desc",
         orderBy: "id" | "versionId" | "name" | "updated" | "published" | "popularity" = "id"
     ): Promise<MapsResponse> {
-        return this.client.get("/maps", {
+        return this.client.get("maps", {
             searchParams: {
                 authorHandle,
                 regionId,
@@ -186,7 +186,7 @@ export class Sc2aw {
      * @param mapId
      */
     public async getMapsBasicInfo(regionId: GameRegion, mapId: number): Promise<MapBasicInfoResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/basic-info`).json<MapBasicInfoResponse>();
+        return this.client.get(`maps/${regionId}/${mapId}/basic-info`).json<MapBasicInfoResponse>();
     }
 
     /**
@@ -197,7 +197,7 @@ export class Sc2aw {
      * @param mapId
      */
     public async getMapsLocales(regionId: GameRegion, mapId: number): Promise<MapLocalesResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/locales`).json<MapLocalesResponse>();
+        return this.client.get(`maps/${regionId}/${mapId}/locales`).json<MapLocalesResponse>();
     }
 
     /**
@@ -217,7 +217,7 @@ export class Sc2aw {
         regionId: GameRegion,
         mapId: number
     ): Promise<MapDetailsResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/details`).json<MapDetailsResponse>();
+        return this.client.get(`maps/${regionId}/${mapId}/details`).json<MapDetailsResponse>();
     }
 
     /**
@@ -228,7 +228,7 @@ export class Sc2aw {
      * @param mapId
      */
     public async getMapsVersions(regionId: GameRegion, mapId: number): Promise<MapVersionsResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/versions`).json<MapVersionsResponse>();
+        return this.client.get(`maps/${regionId}/${mapId}/versions`).json<MapVersionsResponse>();
     }
 
     /**
@@ -239,7 +239,7 @@ export class Sc2aw {
      * @param mapId
      */
     public async getMapsDependencies(regionId: GameRegion, mapId: number): Promise<MapDependenciesResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/dependencies`).json<MapDependenciesResponse>();
+        return this.client.get(`maps/${regionId}/${mapId}/dependencies`).json<MapDependenciesResponse>();
     }
 
     /**
@@ -255,7 +255,7 @@ export class Sc2aw {
         regionId: GameRegion,
         mapId: number
     ): Promise<MapStatsResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/stats`, {
+        return this.client.get(`maps/${regionId}/${mapId}/stats`, {
             searchParams: {
                 kind
             }
@@ -281,7 +281,7 @@ export class Sc2aw {
         regionId: GameRegion,
         mapId: number
     ): Promise<MapPlayerBaseResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/player-base`, {
+        return this.client.get(`maps/${regionId}/${mapId}/player-base`, {
             searchParams: {
                 name,
                 lastPlayedMin,
@@ -308,7 +308,7 @@ export class Sc2aw {
         regionId: GameRegion,
         mapId: number
     ): Promise<MapReviewsResponse> {
-        return this.client.get(`/maps/${regionId}/${mapId}/reviews`, {
+        return this.client.get(`maps/${regionId}/${mapId}/reviews`, {
             searchParams: {
                 orderDirection,
                 orderBy
@@ -322,7 +322,7 @@ export class Sc2aw {
      * {@link https://api.sc2arcade.com/docs/api/index.html#/Maps/get_map_categories}
      */
     public async getMapCategories(): Promise<MapCategoriesResponse> {
-        return this.client.get("/maps/categories").json<MapCategoriesResponse>();
+        return this.client.get("maps/categories").json<MapCategoriesResponse>();
     }
 
     /**
@@ -337,7 +337,7 @@ export class Sc2aw {
         orderDirection: OrderDirection = "desc",
         orderBy: "id" | "profileId" | "name" | "lastOnlineAt" = "name"
     ): Promise<ProfilesResponse> {
-        return this.client.get("/profiles", {
+        return this.client.get("profiles", {
             searchParams: {
                 regionId,
                 name,
@@ -361,10 +361,10 @@ export class Sc2aw {
         realmId: number,
         profileId: number
     ): Promise<ProfileDetailResponse> {
-        return this.client.get(`/profiles/${regionId}/${realmId}/${profileId}`).json<ProfileDetailResponse>();
+        return this.client.get(`profiles/${regionId}/${realmId}/${profileId}`).json<ProfileDetailResponse>();
     }
 
     public async getProfileDetailViaGameId(regionId: GameRegion, profileGameId: number): Promise<ProfileDetailResponse> {
-        return this.client.get(`/profiles/${regionId}/${profileGameId}`).json<ProfileDetailResponse>();
+        return this.client.get(`profiles/${regionId}/${profileGameId}`).json<ProfileDetailResponse>();
     }
 }

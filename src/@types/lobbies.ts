@@ -43,7 +43,7 @@ export interface JoinInfo {
 // Misc
 
 // getActiveLobbies
-export interface ActiveLobbiesResponse {
+export interface ActiveLobbies {
     regionId: GameRegion;
     bnetBucketId: number;
     bnetRecordId: number;
@@ -64,6 +64,7 @@ export interface ActiveLobbiesResponse {
     joinHistory: JoinInfo[];
 }
 
+export type ActiveLobbiesResponse = ActiveLobbies[];
 // getActiveLobbies
 
 // getLobbiesDetails

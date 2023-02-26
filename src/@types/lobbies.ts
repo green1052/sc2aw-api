@@ -61,6 +61,15 @@ export interface ActiveLobbies {
     hostName: string;
     slotsHumansTotal: number;
     slotsHumansTaken: number;
+    map: {
+        regionId: GameRegion;
+        bnetId: number;
+        iconHash: string;
+        name: string;
+        mainCategoryId: number;
+    };
+    extMod: Mod | null;
+    multiMod: Mod | null;
     slots: Slot[];
     joinHistory: JoinInfo[];
 }
